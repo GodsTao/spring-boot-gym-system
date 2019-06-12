@@ -27,7 +27,7 @@
 ![](https://github.com/GodsTao/spring-boot-gym-system/blob/master/upload/add.png)
 
 * 修改公告
-![](https://github.com/GodsTao/spring-boot-gym-system/blob/master/upload/addAnouncement.png)
+![](https://github.com/GodsTao/spring-boot-gym-system/blob/master/upload/updateAnnouncement.png)
 
 * 登录页
 ![](https://github.com/GodsTao/spring-boot-gym-system/blob/master/upload/login.png)
