@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <footer th:fragment="footer" id="footer">
+        <div>
+         &copy;2019<a href="https://baidu.com">gymsystem.com</a>
+         <strong> All Rights reserved</strong>
+        </div>
+        <!-- jQuery 3 -->
+        <script src="bower_components/jquery/dist/jquery.min.js" th:src="@{/bower_components/jquery/dist/jquery.min.js}"></script>
+        <!-- jQuery UI 1.11.4 -->
+        <script src="bower_components/jquery-ui/jquery-ui.min.js" th:src="@{/bower_components/jquery-ui/jquery-ui.min.js}"></script>
+        <script>
+            $.widget.bridge('uibutton', $.ui.button);
+        </script>
+        <!-- Bootstrap 3.3.7 -->
+        <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"
+                th:src="@{/bower_components/bootstrap/dist/js/bootstrap.min.js}"></script>
+        <!-- Morris.js charts -->
+        <script src="bower_components/raphael/raphael.min.js"
+               th:src="@{/bower_components/raphael/raphael.min.js}"></script>
+        <script src="bower_components/morris.js/morris.min.js"
+                th:src="@{/bower_components/morris.js/morris.min.js}"></script>
+        <!-- Sparkline -->
+        <script src="bower_components/jquery-sparkline/dist/jquery.sparkline.min.js"
+                th:src="@{/bower_components/jquery-sparkline/dist/jquery.sparkline.min.js}"></script>
+        <!-- DataTables -->
+        <script src="bower_components/datatables.net/js/jquery.dataTables.min.js"
+                th:src="@{/bower_components/datatables.net/js/jquery.dataTables.min.js}"></script>
+        <script src="bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js"
+                th:src="@{/bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js}"></script>
+        <!-- daterangepicker -->
+        <script src="bower_components/moment/min/moment.min.js"
+                th:src="@{/bower_components/moment/min/moment.min.js}"></script>
+        <script src="bower_components/bootstrap-daterangepicker/daterangepicker.js"
+                th:src="@{/bower_components/bootstrap-daterangepicker/daterangepicker.js}"></script>
+        <!-- datepicker -->
+        <script src="bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"
+                th:src="@{/bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js}"></script>
+        <!-- Slimscroll -->
+        <script src="bower_components/jquery-slimscroll/jquery.slimscroll.min.js"
+                th:src="@{/bower_components/jquery-slimscroll/jquery.slimscroll.min.js}"></script>
+        <!-- jQuery Knob Chart -->
+        <script src="bower_components/jquery-knob/dist/jquery.knob.min.js"
+                th:src="@{/bower_components/jquery-knob/dist/jquery.knob.min.js}"></script>
+        <!-- iCheck -->
+        <script src="plugins/iCheck/icheck.min.js" th:src="@{/plugins/iCheck/icheck.min.js}"></script>
+        <!-- FastClick -->
+        <script src="bower_components/fastclick/lib/fastclick.js" th:src="@{/bower_components/fastclick/lib/fastclick.js}"></script>
+        <!-- AdminLTE App -->
+        <script src="js/adminlte.min.js" th:src="@{/js/adminlte.min.js}"></script>
+        <!-- AdminLTE for demo purposes -->
+        <script src="js/demo.js" th:src="@{/js/demo.js}"></script>
+
+        <script src="js/user/main.js" th:src="@{/js/user/main.js}"></script>
+    </footer>
+
+</body>
+</html>

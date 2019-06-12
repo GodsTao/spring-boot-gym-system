@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<aside class="main-sidebar" id="aside" th:fragmenr="aside">
+    <!-- sidebar: style can be found in sidebar.less -->
+    <section class="sidebar">
+        <!-- Sidebar user panel -->
+        <div class="user-panel">
+            <div class="pull-left image">
+                <img src="img/unauthorized.png" th:src="${userModel.avatar!=null ? userModel.avatar :'/img/unauthorized.png'}"
+                     class="img-circle" alt="User Image">
+            </div>
+            <div class="pull-left info">
+                <p shiro:authenticated="true" class="color-white" id="principal"><shiro:principal
+                        type="com.juntao.gymsystem.usermanagement.domain.User"
+                        property="username"></shiro:principal></p>
+                <p shiro:notAuthenticated="true"><a th:href="@{/toLogin}">未登陆</a></p>
+                <a href="#" shiro:authenticated="true"><i class="fa fa-circle text-success"></i> Online</a>
+                <a href="#" shiro:notAuthenticated="true"><i class="fa fa-circle text-danger"></i> Outline</a>
+            </div>
+        </div>
+        <!-- search form -->
+        <form th:action="@{/searchMenu}" method="get" class="sidebar-form">
+            <input type="hidden" th:value="${searchError}" id="searchError">
+            <div class="input-group">
+                <input type="text" name="name" class="form-control" placeholder="搜素你需要的功能">
+                <span class="input-group-btn">
+                <button type="submit" name="search" id="search-btn" class="btn btn-flat"><i class="fa fa-search"></i>
+                </button>
+              </span>
+            </div>
+        </form>
+        <!-- /.search form -->
+        <ul class="sidebar-menu" data-widget="tree" >
+            <li class="header color-white">功能列表</li>
+            <li class="active treeview"  shiro:hasRole="ROLE_ADMIN">
+                <a href="/admin" th:href="@{/admin/list}">
+                    <i class="fa fa-users"></i> <span>后台管理</span>
+                    <span class="pull-right-container">
+                           <i class="fa fa-angle-left pull-right"></i>
+                         </span>
+                </a>
+                <ul class="treeview-menu">
+                    <li class="active"><a href="/admin" th:href="@{/admin/list}">
+                        <i class="fa fa-circle-o"></i>用户管理</a></li>
+                    <li id="addUser"><a href="admin/add" th:href="@{/admin/getAdd}">
+                        <i class="fa fa-circle-o"></i>新增用户</a></li>
+                    <li class="active"><a href="/admin" th:href="@{/admin/getAnnouncement}">
+                        <i class="fa fa-circle-o"></i>发布公告</a></li>
+                </ul>
+            </li>
+            <li class="treeview">
+                <a href="#">
+                    <i class="fa fa-futbol-o"></i> <span>器材管理</span>
+                    <span class="pull-right-container">
+                            <i class="fa fa-angle-left pull-right"></i>
+                         </span>
+                </a>
+                <ul class="treeview-menu">
+                    <li class="active"><a href="index.html"><i class="fa fa-circle-o"></i>器材查询</a></li>
+                    <li><a href="index2.html"><i class="fa fa-circle-o"></i>器材租借</a></li>
+                </ul>
+            </li>
+            <li class="treeview">
+                <a href="#">
+                    <i class="fa fa-square"></i> <span>场地管理</span>
+                    <span class="pull-right-container">
+                             <i class="fa fa-angle-left pull-right"></i>
+                         </span>
+                </a>
+                <ul class="treeview-menu">
+                    <li class="active"><a href="index.html"><i class="fa fa-circle-o"></i>场地查询</a></li>
+                    <li><a href="index2.html"><i class="fa fa-circle-o"></i>场地预订</a></li>
+                </ul>
+            </li>
+            <li class="treeview">
+                <a href="#">
+                    <i class="fa fa-gamepad"></i> <span>赛事管理</span>
+                    <span class="pull-right-container">
+                         <i class="fa fa-angle-left pull-right"></i>
+                     </span>
+                </a>
+                <ul class="treeview-menu">
+                    <li class="active"><a href="index.html"><i class="fa fa-circle-o"></i>赛事查询</a></li>
+                    <li><a href="index2.html"><i class="fa fa-circle-o"></i>赛事建立</a></li>
+                </ul>
+            </li>
+        </ul>
+    </section>
+</aside>
+</body>
+</html>

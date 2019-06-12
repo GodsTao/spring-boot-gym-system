@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>编辑用户</title>
+</head>
+<body>
+    <div class="container-85">
+        <form th:action="@{/admin/edit}" id="userForm" th:object="${user.userModel}" method="post">
+            <input type="hidden" name="id" th:value="*{id}">
+            <div class="form-group">
+                <label for="username"><span class="fa fa-user"></span>用户名</label>
+                <input type="text" class="form-control" name="username" id="username" th:value="*{username}" readonly="readonly">
+                <span class="help-block">*不得修改</span>
+            </div>
+            <div class="form-group">
+                <label for="email"><span class="fa fa-envelope"></span>邮箱</label>
+                <input type="text" class="form-control" name="email" id="email" th:value="*{email}">
+                <span class="help-block">*邮箱格式</span>
+            </div>
+            <div class="form-group has-warning">
+                <label class="control-label" for="password"><span class="fa fa-lock"></span>密码</label>
+                <input type="password" class="form-control" name="password" id="password" th:value="*{password}">
+                <span class="help-block">*密码长度在6-18位之间&nbsp;&nbsp;<i class="fa fa-bell-o"></i>修改需谨慎</span>
+            </div>
+            <div class="form-group ">
+                <label class="control-label" for="roleId"><span class="fa fa-group"></span>角色</label>
+                <select class="form-control" id="roleId" name="roleId">
+                    <option th:value="1" data-th-selected="${user.userModel.roles[0].name eq 'ROLE_ADMIN'}">超级管理员</option>
+                    <option th:value="2" data-th-selected="${user.userModel.roles[0].name eq 'ROLE_USER'}">普通用户</option>
+                    <option th:value="3" data-th-selected="${user.userModel.roles[0].name eq 'ROLE_EQUIPMENT'}">器材管理员</option>
+                    <option th:value="4" data-th-selected="${user.userModel.roles[0].name eq 'ROLE_SITE'}">场地管理员</option>
+                    <option th:value="5" data-th-selected="${user.userModel.roles[0].name eq 'ROLE_MATCH'}">赛事管理员</option>
+                </select>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

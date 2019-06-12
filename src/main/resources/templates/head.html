@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:shiro="http://www.pollix.at/thymeleaf/shiro"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.min.css"
+          th:href="@{/bower_components/bootstrap/dist/css/bootstrap.min.css}" type="text/css">
+    <link rel="stylesheet" href="/css/main.css" th:href="@{/css/main.css}" type="text/css">
+</head>
+<body>
+<header class="main-header" th:fragment="header"  id="header">
+    <a th:href="@{/}" class="logo">
+        <!-- mini logo for sidebar mini 50x50 pixels -->
+        <span class="logo-mini"><b>体育馆</b></span>
+        <!-- logo for regular state and mobile devices -->
+        <span class="logo-lg"><b>体育馆</b>系统</span>
+    </a>
+    <nav class="navbar navbar-static-top">
+        <!-- Sidebar toggle button-->
+        <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
+            <span class="sr-only">Toggle navigation</span>
+        </a>
+        <div class="navbar-custom-menu">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#navbarsContainer" aria-controls="navbarsExampleContainer">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                </div>
+                <div class="nav navbar-collapse" id="navbarsContainer">
+                    <ul class="nav navbar-nav " id="navbar-list">
+                        <li class="list-item"><a href="list-item/" th:href="@{/}" class="list-item"><span class="fa fa-home"></span>主页</a></li>
+                        <li class="dropdown">
+                            <a class="dropdown-toggle list-item" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                               个人中心 <span class="caret"></span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <shiro:notAuthenticated><li><a  th:href="@{/u/}">个人主页</a></li></shiro:notAuthenticated>
+                                <shiro:authenticated><li><a class="toUserspace" href="javascript:void(0)">个人主页</a></li></shiro:authenticated>
+                                <li role="separator" class="divider"></li>
+                                <shiro:notAuthenticated><li><a  th:href="@{/u/profile/}">个人设置</a></li></shiro:notAuthenticated>
+                                <shiro:authenticated><li><a class="toProfile" href="javascript:void(0)">个人设置</a></li></shiro:authenticated>
+                            </ul>
+                        </li>
+                    </ul>
+                    <ul class="nav navbar-nav pull-right">
+                        <!--消息-->
+                        <li class="dropdown messages-menu ">
+                            <a href="#" class="dropdown-toggle list-item" data-toggle="dropdown">
+                                <i class="fa fa-envelope-o"></i>
+                                <span class="label label-danger">0</span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li class="header">你有 0 条消息</li>
+                                <li>
+                                    <!-- inner menu -->
+                                    <ul class="menu">
+                                        <!--<li>&lt;!&ndash; start message &ndash;&gt;-->
+                                        <!--<a href="#">-->
+                                        <!--<div class="pull-left">-->
+                                        <!--<img src="dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">-->
+                                        <!--</div>-->
+                                        <!--<h4>-->
+                                        <!--Support Team-->
+                                        <!--<small><i class="fa fa-clock-o"></i> 5 mins</small>-->
+                                        <!--</h4>-->
+                                        <!--<p>Why not buy a new awesome theme?</p>-->
+                                        <!--</a>-->
+                                        <!--</li>-->
+                                        <!-- empty message -->
+                                        <li>
+                                            <h3>
+                                                暂无新消息
+                                            </h3>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="footer"><a href="#">查看所有消息</a></li>
+                            </ul>
+                        </li>
+                        <div shiro:notAuthenticated="true" class="pull-right" style="padding-right: 120px">
+                            <a th:href="@{/toLogin}" type="button" class="btn list-item" id="login">登录</a>
+                            <a th:href="@{/toRegister}" type="button" class="btn list-item" id="regist">注册</a>
+                        </div>
+                        <div shiro:authenticated="true" class="pull-right" style="padding-right: 120px">
+                            <ul class="nav navbar-nav">
+                                <li class="dropdown user user-menu">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                        <img th:src="${userModel.avatar!=null ? userModel.avatar :'/img/unauthorized.png'}" class="image-circle" alt="User Image">
+                                        <span class="hidden-xs list-item" id="nav-username"> [[${userModel.username}]]</span>
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                        <!-- User image -->
+                                        <li class="user-header">
+                                            <img th:src="${userModel.avatar!=null ? userModel.avatar :'/img/unauthorized.png'}" class="img-circle" alt="User Image">
+                                            <p>
+                                                [[${userModel.username}]]
+                                            </p>
+                                            <p  style="text-align: left">个性签名：<small th:text="${userModel.signature!=null ? userModel.signature:'这个人很懒，什么也没留下'}"></small></p>
+                                        </li>
+                                        <!-- Menu Body -->
+
+                                        <!-- Menu Footer-->
+                                        <li class="user-footer">
+                                            <div class="pull-left">
+                                                <a th:href="@{'/u/'+${userModel.username}+'/getPasswordForm'}" class="btn btn-info btn-flat">修改密码</a>
+                                            </div>
+                                            <div class="pull-right">
+                                                <a th:href="@{/logout}" class="btn btn-danger btn-flat">登出</a>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+</header>
+</body>
+</html>

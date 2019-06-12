@@ -1,0 +1,290 @@
+*{
+    font-size: 16px;
+}
+#footer{
+    background: #222d32;
+    color: #ccc;
+    height:100px;
+    line-height: 100px;
+    text-align: center;
+}
+#footer2 {
+    height:100px;
+    line-height: 100px;
+    text-align: center;
+}
+#header {
+    background:#605ca8;
+    margin-bottom: 0;
+}
+
+#aside {
+    background:#222d32;
+}
+#aside a{
+    color: #fff;
+}
+#mainContainer{
+    background:#001F3F;
+}
+
+/**商标*/
+#brand{
+    font-weight: bold;
+    color: #eee;
+}
+.open>a{
+    color: #000 ;
+}
+.open>a>span{
+    color:#000;
+}
+/**巨幕**/
+#jumbotron{
+    height: 90%;
+}
+.list-item {
+    color:#eee ;
+}
+.list-item:hover {
+    color:black ;
+}
+/*头部导航栏头像*/
+.image-circle {
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+    float: left;
+    margin-right: 10px;
+    margin-top: -2px;
+}
+.navbar-nav > .user-menu > .dropdown-menu > li.user-header{
+    height: 200px;
+    padding: 10px;
+    text-align: center;
+    background-color: #605ca8;
+}
+
+.img-circle{
+    z-index: 5;
+    height: 90px;
+    width: 90px;
+    border: 3px solid;
+    border-color: transparent;
+    border-color: rgba(255,255,255,0.2);
+}
+
+/*登录按钮*/
+#login {
+    margin-top: 8px;
+    margin-bottom: 8px;
+}
+/*注册按钮*/
+#regist{
+    margin-top: 8px;
+    margin-bottom: 8px;
+}
+/*退出按钮*/
+#logout {
+    border: 1px #d33724 solid ;
+    margin-top: 8px;
+    margin-bottom: 8px;
+}
+
+/*白色字体*/
+.color-white{
+    color:#fff;
+}
+
+/*组件间隔*/
+.margin-30 {
+    margin-top: 30px;
+}
+
+/*小字体*/
+.little-font{
+    color: #aaa;
+    font-size: 12px;
+}
+.alert-dismissable .close,
+.alert-dismissible .close{
+    position: relative;
+    top: -2px;
+    right: -21px;
+    color: inherit;
+}
+.close {
+    float: right;
+    font-size: 21px;
+    font-weight: bold;
+    line-height: 1;
+    color: #000;
+    text-shadow: 0 1px 0 #fff;
+    filter: alpha(opacity=20);
+    opacity: 0.2;
+}
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+    filter: alpha(opacity=50);
+    opacity: 0.5;
+}
+button.close {
+    padding: 0;
+    cursor: pointer;
+    background: transparent;
+    border: 0;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+.modal-header .close {
+    margin-top: -2px;
+}
+
+.container-85{
+    width: 90%;
+    margin:0 auto;
+}
+.container-800{
+    width: 800px;
+    margin:0 auto;
+    padding-top: 150px;
+}
+.treeview-menu>li:hover {
+    opacity: 0.6;
+    background: #333d44;
+}
+
+#content {
+    padding-top: 50px;
+}
+
+#userForm {
+    padding-bottom:50px;
+}
+
+
+.blog-avatar-230{
+    border-radius:5px;
+    width:230px;
+    height:230px;
+}
+
+.no-record{
+    padding: 30px;
+    text-align: center;
+    color:#999;
+}
+
+.mt-20{
+    margin-top: 20px;
+}
+
+.mt-40 {
+    margin-top: 40px;
+}
+
+.record {
+    border-bottom:1px #2288bb solid;
+    padding-bottom: 20px;
+}
+
+/*轮播图*/
+.slide{
+    width:730px;
+    height:400px;
+    overflow: hidden;
+    position:relative;
+}
+.img-list{
+    width:3650px;
+    height:400px;
+    position:absolute;
+
+}
+.img-list>a>img{
+    float:left;
+    width:730px;
+    height:400px;
+}
+.slide-text {
+    position:absolute;
+    height: 50px;
+    width: 3650px;
+    bottom:0px;
+    opacity: 0.7;
+    background: #ccc;
+}
+.slide-text>div {
+    float:left;
+    height: 50px;
+    text-indent: 2em;
+    width: 730px;
+    color: #fff;
+}
+.pointer{
+    position:absolute;
+    width:100px;
+    bottom:10px;
+    left: 315px;
+}
+
+.pointer>span{
+    cursor:pointer;
+    display:inline-block;
+    width:10px;
+    height:10px;
+    background: #7b7d80;
+    border-radius:50%;
+    border:1px solid #fff;
+}
+.pointer .selected{
+    background: #28a4c9;
+}
+.arrows{
+    position:absolute;
+    text-decoration:none;
+    width:40px;
+    height:40px;
+    background: #727d8f;
+    color:#fff;
+    font-size: 30px;
+    font-weight: bold;
+    line-height:40px;
+    text-align:center;
+    top:180px;
+    display:none;
+}
+.arrows:hover{
+    background: #0f0f0f;
+    text-decoration:none;
+}
+.left{
+    left:0;
+}
+.right{
+    right:0;
+}
+.slide:hover .arrows{
+    display:block;
+}
+
+/*场地*/
+.site {
+    text-align: center;
+}
+.site>div>img {
+    margin:auto;
+    vertical-align: middle;
+}
+.site>div>h4 {
+    text-align: center;
+}
+.site>div>p>a{
+    margin:auto;
+    vertical-align: middle;
+}
