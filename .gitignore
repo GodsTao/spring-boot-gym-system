@@ -11,6 +11,9 @@ HELP.md
 .springBeans
 .sts4-cache
 
+### MyEclipse ###
+.project
+
 ### IntelliJ IDEA ###
 .idea
 *.iws
